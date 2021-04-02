@@ -1,0 +1,74 @@
+[
+   {
+      "model":"orders.OrderItem",
+      "pk":1,
+      "fields":{
+         "created_at":"2020-08-11 13:25:20.816480+00:00",
+         "updated_at":"2020-08-12 13:25:20.816480+00:00",
+         "order_id":1,
+         "pizza_id":1,
+         "size":"m",
+         "price":7.99
+      }
+   },
+   {
+      "model":"orders.OrderItem",
+      "pk":2,
+      "fields":{
+         "created_at":"2020-02-12 13:25:20.816480+00:00",
+         "updated_at":"2020-02-12 13:25:20.816480+00:00",
+         "order_id":1,
+         "pizza_id":2,
+         "size":"m",
+         "price":8.99
+      }
+   },
+   {
+      "model":"orders.OrderItem",
+      "pk":3,
+      "fields":{
+         "created_at":"2020-04-12 13:25:20.816480+00:00",
+         "updated_at":"2020-05-12 13:25:20.816480+00:00",
+         "order_id":1,
+         "pizza_id":2,
+         "size":"m",
+         "price":8.99
+      }
+   },
+   {
+      "model":"orders.OrderItem",
+      "pk":4,
+      "fields":{
+         "created_at":"2020-04-12 13:25:20.816480+00:00",
+         "updated_at":"2020-05-12 13:25:20.816480+00:00",
+         "order":2,
+         "pizza":3,
+         "size":"m",
+         "price":10.99
+      }
+   },
+   {
+      "model":"orders.OrderItem",
+      "pk":5,
+      "fields":{
+         "created_at":"2020-01-12 13:25:20.816480+00:00",
+         "updated_at":"2020-01-12 13:25:20.816480+00:00",
+         "order":3,
+         "pizza":2,
+         "size":"m",
+         "price":8.99
+      }
+   },
+   {
+      "model":"orders.OrderItem",
+      "pk":6,
+      "fields":{
+         "created_at":"2020-01-12 13:25:20.816480+00:00",
+         "updated_at":"2020-01-12 13:25:20.816480+00:00",
+         "order":3,
+         "pizza":2,
+         "size":"m",
+         "price":8.99
+      }
+   }
+]

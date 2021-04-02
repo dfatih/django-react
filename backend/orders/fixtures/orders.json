@@ -1,0 +1,44 @@
+[
+   {
+      "model":"orders.Order",
+      "pk":1,
+      "fields":{
+         "created_at":"2021-02-12 13:25:20.816480+00:00",
+         "updated_at":"2021-02-12 13:25:20.816480+00:00",
+         "name":"Karlheinz Müller",
+         "address1":"Rosenstr. 1",
+         "address2":"",
+         "zip_code":"0228",
+         "city":"Bonn",
+         "status":"fullfilled"
+      }
+   },
+   {
+      "model":"orders.Order",
+      "pk":2,
+      "fields":{
+         "created_at":"2021-02-12 13:25:20.816480+00:00",
+         "updated_at":"2021-02-12 13:25:20.816480+00:00",
+         "name":"Bernhard Blumkowski",
+         "address1":"Baumstr.",
+         "address2":"9a",
+         "zip_code":"0221",
+         "city":"Köln",
+         "status":"accepted"
+      }
+   },
+   {
+      "model":"orders.Order",
+      "pk":3,
+      "fields":{
+         "created_at":"2021-02-12 13:25:20.816480+00:00",
+         "updated_at":"2021-02-12 13:25:20.816480+00:00",
+         "name":"Ömer Demir",
+         "address1":"Invalidenstr. 19",
+         "address2":"Appartment B",
+         "zip_code":"10115",
+         "city":"Berlin",
+         "status":"preparation"
+      }
+   }
+]
