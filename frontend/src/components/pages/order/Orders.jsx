@@ -1,6 +1,7 @@
-import React from 'react';
+import axios from 'axios';
+import React, { Component } from 'react';
 import Link from '@material-ui/core/Link';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -25,16 +26,42 @@ function preventDefault(event) {
   event.preventDefault();
 }
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = theme => ({
   seeMore: {
     marginTop: theme.spacing(3),
   },
-}));
+});
 
-export default function Orders() {
-  const classes = useStyles();
-  return (
-    <React.Fragment>
+class Orders extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: {
+        name: "",
+        description: "",
+        image: ""
+      },
+      orders: []
+      };
+  }
+
+  componentDidMount() {
+    this.getOrders();
+  }
+
+  getOrders = () => {
+    axios
+      .get("/orders/orders/")
+      .then((res) => this.setState({ orders: res.data }))
+      .catch((err) => console.log(err))
+  };
+
+  render(){
+    const { classes } = this.props;
+    const newItems = this.state.orders;
+
+    return (
+      <React.Fragment>
       <Title>Recent Orders</Title>
       <Table size="small">
         <TableHead>
@@ -47,7 +74,7 @@ export default function Orders() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {newItems.map((row) => (
             <TableRow key={row.id}>
               <TableCell>{row.name}</TableCell>
               <TableCell>{row.address1} {row.address2}</TableCell>
@@ -64,5 +91,8 @@ export default function Orders() {
         </Link>
       </div>
     </React.Fragment>
-  );
+    );
+  }
 }
+
+export default withStyles(useStyles)(Orders);
