@@ -9,8 +9,8 @@ import TableRow from '@material-ui/core/TableRow';
 import Title from './Title';
 
 // Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-  return { id, date, name, shipTo, paymentMethod, amount };
+function createData(id, name, address1, address2, zip_code, city, status) {
+  return { id, name, address1, address2, zip_code, city, status };
 }
 
 const rows = [
@@ -39,21 +39,21 @@ export default function Orders() {
       <Table size="small">
         <TableHead>
           <TableRow>
-            <TableCell>Date</TableCell>
             <TableCell>Name</TableCell>
-            <TableCell>Ship To</TableCell>
-            <TableCell>Payment Method</TableCell>
-            <TableCell align="right">Sale Amount</TableCell>
+            <TableCell>Addresse</TableCell>
+            <TableCell>Zip Code</TableCell>
+            <TableCell align="right">Stadt</TableCell>
+            <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
             <TableRow key={row.id}>
-              <TableCell>{row.date}</TableCell>
               <TableCell>{row.name}</TableCell>
-              <TableCell>{row.shipTo}</TableCell>
-              <TableCell>{row.paymentMethod}</TableCell>
-              <TableCell align="right">{row.amount}</TableCell>
+              <TableCell>{row.address1} {row.address2}</TableCell>
+              <TableCell>{row.zip_code}</TableCell>
+              <TableCell align="right">{row.city}</TableCell>
+              <TableCell>{row.status}</TableCell>
             </TableRow>
           ))}
         </TableBody>

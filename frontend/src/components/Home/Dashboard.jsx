@@ -19,7 +19,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { mainListItems } from './ListItems';
 import Hidden from '@material-ui/core/Hidden';
 import Orders from '../pages/order/Orders';
-import Pizzas from '../pages/pizza/Content';
+import Pizzas from '../pages/pizza/GetPizzas';
 
 
 const drawerWidth = 240;

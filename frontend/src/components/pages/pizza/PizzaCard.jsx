@@ -22,23 +22,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));;
 
-function CoffeCard(props) {
+function PizzaCard(props) {
     const classes = useStyles();
-    const { imgSrc, title, describtion, price } = props;
+    const { id, image, name, description } = props;
     return (
-        <Grid item xs={12} sm={12} md={6}>
-                <Card className={classes.card}>
+        <Grid item xs={12} sm={12} md={6} >
+                <Card className={classes.card} value={id} key={id}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
-                    title="Image title"
+                    image={image}
+                    title={name}
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {name}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      {description}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -57,4 +57,4 @@ function CoffeCard(props) {
     );
 };
 
-export default CoffeCard;
+export default PizzaCard;
