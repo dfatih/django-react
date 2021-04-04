@@ -1,6 +1,8 @@
 import './App.css';
 import React, { Component } from 'react';
+import ReactDOM from "react-dom";
 import axios from 'axios';
+import Dashboard from './components/Home/Dashboard';
 
 class App extends Component {
   constructor(props) {
@@ -43,13 +45,14 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-                {this.renderItems()}
-        
-      </div>
+      <React.Fragment>
+        <Dashboard/>
+      </React.Fragment>
     );
   }
 };
 
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 
 export default App;
