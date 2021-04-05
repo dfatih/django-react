@@ -21,6 +21,20 @@ const useStyles = (theme) => ({
   },
 });
 
+const pizza_sizes = [
+  {
+    value: 'Small',
+    label: 'Small',
+  },
+  {
+    value: 'Medium',
+    label: 'Medium',
+  },
+  {
+    value: 'Large',
+    label: 'Large',
+  },
+];
 
 class FormDialog extends Component {
   constructor(props) {
@@ -28,29 +42,14 @@ class FormDialog extends Component {
     this.state = {
       open: false,
       form: {
-        name: '',
+        name: this.props.pizza_name,
         address1: '',
         address2: '',
         zip_code: '',
         city: '',
-        size: '',
         status: 'accepted',
        
-      },
-      pizza_sizes: [
-       {
-          value: this.props.pizza_name + ' s',
-          label: 'Small',
-        },
-        {
-          value: this.props.pizza_name + ' m',
-          label: 'Medium',
-        },
-        {
-          value: this.props.pizza_name + ' l',
-          label: 'Large',
-        },
-      ]
+      }
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -72,13 +71,12 @@ class FormDialog extends Component {
 
   handleSubmit = () => {
     const {form} = this.state
-    console.log(form)
     this.props.putOrder(form)
   }
 
   render(){
     const {classes} = this.props;
-    const {open, form: {name, address1, zip_code, city, size}, pizza_sizes} = this.state;
+    const {open, form: {name, address1, zip_code, city}} = this.state;
     return (
       <React.Fragment>
          <Button
@@ -126,23 +124,7 @@ class FormDialog extends Component {
                 value={city}
                 onChange={this.handleChange('city')}
               />
-             <TextField
-               id="outlined-select-currency-native"
-              select
-              label="Select Your Size"
-              value={size}
-              onChange={this.handleChange('size')}
-              SelectProps={{
-                native: true,
-              }}
-              variant="outlined"
-            >
-              {pizza_sizes.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-              </TextField>
+             
             </form>
           </DialogContent>
           <DialogActions>

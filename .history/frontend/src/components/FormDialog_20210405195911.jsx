@@ -129,12 +129,13 @@ class FormDialog extends Component {
              <TextField
                id="outlined-select-currency-native"
               select
-              label="Select Your Size"
+              label="Native select"
               value={size}
               onChange={this.handleChange('size')}
               SelectProps={{
                 native: true,
               }}
+              helperText="Please select your Size"
               variant="outlined"
             >
               {pizza_sizes.map((option) => (

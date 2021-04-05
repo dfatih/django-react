@@ -21,6 +21,20 @@ const useStyles = (theme) => ({
   },
 });
 
+const pizza_sizes = [
+  {
+    value: 's',
+    label: 'Small',
+  },
+  {
+    value: 'Medium',
+    label: 'Medium',
+  },
+  {
+    value: 'Large',
+    label: 'Large',
+  },
+];
 
 class FormDialog extends Component {
   constructor(props) {
@@ -39,15 +53,15 @@ class FormDialog extends Component {
       },
       pizza_sizes: [
        {
-          value: this.props.pizza_name + ' s',
+          value: 's',
           label: 'Small',
         },
         {
-          value: this.props.pizza_name + ' m',
+          value: 'm',
           label: 'Medium',
         },
         {
-          value: this.props.pizza_name + ' l',
+          value: 'l',
           label: 'Large',
         },
       ]
@@ -129,12 +143,13 @@ class FormDialog extends Component {
              <TextField
                id="outlined-select-currency-native"
               select
-              label="Select Your Size"
-              value={size}
-              onChange={this.handleChange('size')}
+              label="Native select"
+              value={pizza_sizes}
+              onChange={this.handleChange('sizes')}
               SelectProps={{
                 native: true,
               }}
+              helperText="Please select your currency"
               variant="outlined"
             >
               {pizza_sizes.map((option) => (
