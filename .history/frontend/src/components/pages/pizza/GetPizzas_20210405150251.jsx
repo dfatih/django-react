@@ -37,9 +37,11 @@ class GetPizzas extends Component {
   };
 
   putOrder = (item) => {
+    console.log("item")
+    console.log(item)
     axios
       .post("/orders/orders/", item)
-      .catch((err) => console.log(err))
+      .then((res) => console.log(item));
   }
 
   renderItems = () => {

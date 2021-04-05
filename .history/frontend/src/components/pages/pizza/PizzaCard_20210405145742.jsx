@@ -25,6 +25,10 @@ const useStyles = (theme) => ({
 
   class PizzaCard extends Component {
 
+    putOrder = () => {
+      this.props.putOrder()
+    }
+
     render(){
       const {classes} = this.props;
       return (
@@ -45,7 +49,7 @@ const useStyles = (theme) => ({
                     </CardContent>
                     <CardActions>
                      <PlaceOrder
-                      putOrder={this.props.putOrder}
+                      putOrder={this.putOrder}
                      />
                     </CardActions>
                   </Card>

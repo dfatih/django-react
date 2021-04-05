@@ -63,6 +63,10 @@ class GetPizzas extends Component {
              <Grid container spacing={4}>
                  {this.renderItems()}
              </Grid>
+             
+                     <PlaceOrder
+                      putOrder={this.props.putOrder}
+                     />
       </Container>
     );
   }

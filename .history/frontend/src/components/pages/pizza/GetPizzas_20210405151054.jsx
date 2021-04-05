@@ -3,6 +3,7 @@ import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import { withStyles  } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import PlaceOrder from '../../FormDialog';
 import Pizzas from './PizzaCard';
 
 const useStyles = theme => ({
@@ -63,6 +64,10 @@ class GetPizzas extends Component {
              <Grid container spacing={4}>
                  {this.renderItems()}
              </Grid>
+             
+                     <PlaceOrder
+                      putOrder={this.putOrder}
+                     />
       </Container>
     );
   }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Grid from '@material-ui/core/Grid';
 import { withStyles  } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import PlaceOrder from '../../FormDialog';
 import Pizzas from './PizzaCard';
 
 const useStyles = theme => ({
@@ -23,6 +24,7 @@ class GetPizzas extends Component {
       },
       pizzas: []
       };
+    this.putOrder = this.putOrder.bind(this);
   };
 
   componentDidMount() {
@@ -37,9 +39,10 @@ class GetPizzas extends Component {
   };
 
   putOrder = (item) => {
+    console.log(item)
     axios
       .post("/orders/orders/", item)
-      .catch((err) => console.log(err))
+      .then((res) => console.log(item));
   }
 
   renderItems = () => {

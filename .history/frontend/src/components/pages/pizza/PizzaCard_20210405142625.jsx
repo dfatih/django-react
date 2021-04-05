@@ -24,7 +24,6 @@ const useStyles = (theme) => ({
 });;
 
   class PizzaCard extends Component {
-
     render(){
       const {classes} = this.props;
       return (

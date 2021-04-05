@@ -23,6 +23,7 @@ class GetPizzas extends Component {
       },
       pizzas: []
       };
+    this.putOrder = this.putOrder.bind(this);
   };
 
   componentDidMount() {
@@ -39,7 +40,7 @@ class GetPizzas extends Component {
   putOrder = (item) => {
     axios
       .post("/orders/orders/", item)
-      .catch((err) => console.log(err))
+      .then((res) => console.log(item));
   }
 
   renderItems = () => {
